@@ -1,6 +1,6 @@
 {
   "name": "discord-bot-typescript-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "![MIT](https://img.shields.io/badge/license-MIT-blue.svg) ![typescript](https://img.shields.io/badge/dynamic/json?style=plastic&color=blue&label=Typescript&prefix=v&query=devDependencies.typescript&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate%2Fmain%2Fpackage.json) ![github](https://img.shields.io/badge/dynamic/json?style=plastic&color=darkviolet&label=GitHub&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate%2Fmain%2Fpackage.json)",
   "main": "index.js",
   "scripts": {
