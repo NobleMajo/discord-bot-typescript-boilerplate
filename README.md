@@ -18,8 +18,12 @@
   - [Getting Started](#getting-started)
   - [Development](#development)
 - [Custom cmd](#custom-cmd)
-- [New project](#new-project)
-- [copy tsconfig.json](#copy-tsconfigjson)
+- [From scratch](#from-scratch)
+    - [Dependencies](#dependencies)
+    - [1. Init](#1-init)
+    - [2. Base code](#2-base-code)
+    - [3. Further development](#3-further-development)
+- [contribution](#contribution)
 
 # About
 The Discord Bot Boilerplate is a versatile foundation for building custom TypeScript Discord bots with ease.
@@ -71,17 +75,77 @@ npm run dev
 2. Use the `registerCommand(<builder>, <handler>)` function to register a new command in the global CmdManager created in the `index.js`
 3. Check if the command get registered by starting the bot and check the `# Loaded commands:` logs.
 
-# New project
+# From scratch
+This section explains how to initialize your own TypeScript Discord bot project `from scratch`.
+
+Please note that the explanation does not include an environment variable interface for setting the bot credentials and is not `production ready`.
+
+### Dependencies
+This requires a linux-like operating system that has the following dependencies installed: 
+- `npm`,  
+- `nodejs` and 
+- `wget` or `curl` *(both optional)*.
+
+### 1. Init
 Initialize a new Discord bot project from scratch using the following commands:
 ````bash
+# create the new project dir
+mkdir project-name
+cd project-name
+
+# init npm and deps
 npm init
 npm i -D typescript @types/node nodemon ts-node
 npm i discord.js
 
+# init typescript config file
 npm exec -- tsc --init
 
+# create source files
 mkdir src
 touch src/index.ts
 
-# copy tsconfig.json 
+# copy tsconfig.json and .gitignore from this project or use the following wget or curl command
+wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json
+wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/.gitignore
+# or
+curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json -o tsconfig.json
+curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/.gitignore -o .gitignore
+````
+
+### 2. Base code
+Finally add the following source code to the `src/index.ts`:
+```ts
+// Require the necessary discord.js classes
+import { Client, Events, GatewayIntentBits } from "discord.js"
+const token = "" // <- Add your discord bot token here. This is not for production!
+
+// Create a new client instance
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+// When the client is ready, run this code (only once)
+// We use 'c' for the event parameter to keep it separate from the already defined 'client'
+client.once(Events.ClientReady, c => {
+	console.log(`Ready! Logged in as ${c.user.tag}`)
+})
+
+// Log in to Discord with your client's token
+client.login(token)
 ```
+
+### 3. Further development
+From here you can follow the discord.js guide: [https://discordjs.guide/creating-your-bot/main-file.html](https://discordjs.guide/creating-your-bot/main-file.html).
+
+# contribution
+ - 1. fork the project
+ - 2. implement your idea
+ - 3. create a pull/merge request
+```ts
+// please create seperated forks for different kind of featues/ideas/structure changes/implementations
+```
+
+---
+**cya ;3**  
+*by NobleMajo*
+
+

@@ -3,14 +3,11 @@ import { registerCommand } from "../assets/DiscordCmd"
 
 registerCommand(
     new SlashCommandBuilder()
-        .setName('ping')
-        .setDescription('Pongs you!'),
+        .setName('random')
+        .setDescription('Shows a random number between 0 and 1!'),
     async (
         interaction: ChatInputCommandInteraction<CacheType>
     ) => {
-        await interaction.reply(
-            `Pong!`
-        )
+        await interaction.reply("Your random number: " + Math.random())
     }
 )
-

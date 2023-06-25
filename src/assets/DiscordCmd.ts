@@ -192,7 +192,9 @@ export const loadFilesRecursive = async (
                 result.push(
                     ...await loadFilesRecursive(
                         rootDir,
-                        subpath + "/" + file
+                        subpath ?
+                            subpath + "/" + file :
+                            file
                     )
                 )
             } else if (stat.isFile()) {
