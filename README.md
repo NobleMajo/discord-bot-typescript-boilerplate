@@ -45,6 +45,8 @@ export DISCORD_GUILD_ID=CHANGE_ME
 export DISCORD_MEMBER_ROLE_ID=CHANGE_ME
 ```
 
+You can get your own bot credentials from [https://discord.com/developers/applications](https://discord.com/developers/applications).
+
 ## Getting Started
 
 Follow the instructions below to get started with the Discord bot:
@@ -93,24 +95,21 @@ Initialize a new Discord bot project from scratch using the following commands:
 mkdir project-name
 cd project-name
 
-# init npm and deps
-npm init
-npm i -D typescript @types/node nodemon ts-node
-npm i discord.js
+# copy package.json, tsconfig.json and .gitignore from this project or use the following wget or curl command
+wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json
+wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/package.json
+wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/.gitignore
+# or
+curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json -o tsconfig.json
+curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/package.json -o package.json
+curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/.gitignore -o .gitignore
 
-# init typescript config file
-npm exec -- tsc --init
+# init npm and deps
+npm init # setup your project data
 
 # create source files
 mkdir src
 touch src/index.ts
-
-# copy tsconfig.json and .gitignore from this project or use the following wget or curl command
-wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json
-wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/.gitignore
-# or
-curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json -o tsconfig.json
-curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/.gitignore -o .gitignore
 ````
 
 ### 2. Base code
@@ -121,7 +120,9 @@ import { Client, Events, GatewayIntentBits } from "discord.js"
 const token = "" // <- Add your discord bot token here. This is not for production!
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+   intents: [GatewayIntentBits.Guilds]
+})
 
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
