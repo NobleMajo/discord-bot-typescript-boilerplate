@@ -1,55 +1,69 @@
-# Discord Bot Boilerplate
+# discord bot boilerplate
 
-A Discord bot that includes a command system and two example commands for testing purposes.
+![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+![typescript](https://img.shields.io/badge/dynamic/json?style=plastic&color=blue&label=Typescript&prefix=v&query=devDependencies.typescript&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate%2Fmain%2Fpackage.json)
+![github](https://img.shields.io/badge/dynamic/json?style=plastic&color=darkviolet&label=GitHub&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate%2Fmain%2Fpackage.json)
 
-## Environment Setup
+![](https://img.shields.io/badge/dynamic/json?color=green&label=watchers&query=watchers&suffix=x&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate)
+![](https://img.shields.io/badge/dynamic/json?color=yellow&label=stars&query=stargazers_count&suffix=x&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate)
+![](https://img.shields.io/badge/dynamic/json?color=orange&label=subscribers&query=subscribers_count&suffix=x&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate)
+![](https://img.shields.io/badge/dynamic/json?color=navy&label=forks&query=forks&suffix=x&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate)
+![](https://img.shields.io/badge/dynamic/json?color=darkred&label=open%20issues&query=open_issues&suffix=x&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fnoblemajo%2Fdiscord-bot-typescript-boilerplate)
 
-Before running the bot, make sure to set up the required environment variables. Follow the instructions below:
+# Table of Contents
+- [discord bot boilerplate](#discord-bot-boilerplate)
+- [Table of Contents](#table-of-contents)
+- [About](#about)
+- [env](#env)
+- [starting](#starting)
+- [development](#development)
+- [new cmd](#new-cmd)
+- [new porject](#new-porject)
+- [copy tsconfig.json](#copy-tsconfigjson)
 
+# About
+The Discord Bot Boilerplate is a versatile foundation for building custom Discord bots with ease.
+
+It provides a:
+- comprehensive command system,
+- environment variable setup,
+- and example commands for quick testing and customization.
+
+The Discord Bot Boilerplate is a perfect starting point for TypeScript developers who want to quickly kickstart their bot projects.
+It provides a 100% type-safe boilerplate, ensuring a robust foundation for building Discord bots.
+
+# env
+Before running the bot, you need to set up your environment variables like the following:
 ```bash
 export DISCORD_BOT_TOKEN=CHANGE_ME
 export DISCORD_GUILD_ID=CHANGE_ME
+export DISCORD_MEMBER_ROLE_ID=CHANGE_ME
+export DISCORD_VERIFY_CHANNEL_ID=CHANGE_ME
+export DISCORD_VERIFY_CATEGORY_ID=CHANGE_ME
 export DISCORD_APP_ID=CHANGE_ME
 ```
 
-## Getting Started
-
-Follow the instructions below to get started with the Discord bot:
-
-1. Clone this repository to your local machine.
-   ```bash
-   git clone git@github.com:NobleMajo/discord-bot-boilerplate.git
-   ```
-2. Set up the required [environment variables](#environment-setup).
-3. Compile the bot using the provided build command.
-   ```bash
-   npm run tsc
-   ```
-4. Start the bot and enjoy exploring the included commands.
-   ```bash
-   npm run start
-   ```
-
-## Development
-
-For development purposes, you can run the bot using ts-node, which automatically restarts when files in the source folder change. Use the following command:
-
+# starting
+Use the following command to compile and then start the bot:
 ```bash
+npm run tsc
+npm run start
+```
+
+# development
+Use the following command to run the bot with ts-node and automatically start when files in the source folder change:
+```
 npm run dev
 ```
 
-## Adding a New Command
-
-Follow the steps below to add a new command to the bot:
-
-1. Create a new file in the "cmd" folder located in the "src" directory.
+# new cmd
+1. Create a file in the "cmd" folder in the "src" folder.
    The file extension should be "<name>.cmd.ts".
-2. Use the "registerCommand" function to register the new command in the global CmdManager created in the "index.js" file.
-3. Start the bot and check the logs for the "Loaded commands:" message to ensure that the new command is registered successfully.
+2. Use the "registerCommand" function to register a new command in the global CmdManager created in the "index.js"
+3. Check if the command get registered by starting the bot and check the "Loaded commands:" logs.
 
-## Creating a New Project
-
-To initialize a new Discord bot project from scratch, execute the following commands:
+# new porject
+Init a new discord bot project from scratch with the following commands:
 ````bash
 npm init
 npm i -D typescript @types/node nodemon ts-node
@@ -62,19 +76,3 @@ touch src/index.ts
 
 # copy tsconfig.json 
 ```
-
-# License
-
-This project is licensed under the MIT License.
-
-# Contribution
- - 1. fork the project
- - 2. implement your idea
- - 3. create a pull/merge request
-```ts
-// please create seperated forks for different kind of featues/ideas/structure changes/implementations
-```
-
----
-**cya ;3**  
-*by NobleMajo*
