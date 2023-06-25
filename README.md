@@ -95,21 +95,22 @@ Initialize a new Discord bot project from scratch using the following commands:
 mkdir project-name
 cd project-name
 
-# copy package.json, tsconfig.json and .gitignore from this project or use the following wget or curl command
-wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json
-wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/package.json
-wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/.gitignore
-# or
-curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json -o tsconfig.json
-curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/package.json -o package.json
-curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/.gitignore -o .gitignore
-
 # init npm and deps
-npm init # setup your project data
+npm init
+npm i -D typescript @types/node nodemon ts-node
+npm i discord.js
 
 # create source files
 mkdir src
 touch src/index.ts
+
+# init typescript config file
+# copy tsconfig.json and .gitignore from this project or use the following wget or curl command
+wget https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json
+# or
+curl https://raw.githubusercontent.com/NobleMajo/discord-bot-typescript-boilerplate/main/tsconfig.json -o tsconfig.json
+# or init (and setup like in the git repository)
+npm exec -- tsc --init
 ````
 
 ### 2. Base code
