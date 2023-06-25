@@ -17,20 +17,20 @@
 - [env](#env)
 - [starting](#starting)
 - [development](#development)
-- [new cmd](#new-cmd)
+- [New cmd](#new-cmd)
 - [new porject](#new-porject)
 - [copy tsconfig.json](#copy-tsconfigjson)
 
 # About
-The Discord Bot Boilerplate is a versatile foundation for building custom Discord bots with ease.
+The Discord Bot Boilerplate is a versatile foundation for building custom TypeScript Discord bots with ease.
 
 It provides a:
 - comprehensive command system,
 - environment variable setup,
 - and example commands for quick testing and customization.
 
-The Discord Bot Boilerplate is a perfect starting point for TypeScript developers who want to quickly kickstart their bot projects.
-It provides a 100% type-safe boilerplate, ensuring a robust foundation for building Discord bots.
+The Discord Bot Boilerplate is a perfect starting point for `TypeScript` developers who want to `quickly kickstart` their bot projects.
+It provides a `100% type-safe` boilerplate, ensuring a robust foundation for building Discord bots.
 
 # env
 Before running the bot, you need to set up your environment variables like the following:
@@ -51,16 +51,16 @@ npm run start
 ```
 
 # development
-Use the following command to run the bot with ts-node and automatically start when files in the source folder change:
+Use the following command to run the bot with `ts-node` and automatically start when files in the source folder change:
 ```
 npm run dev
 ```
 
-# new cmd
-1. Create a file in the "cmd" folder in the "src" folder.
-   The file extension should be "<name>.cmd.ts".
-2. Use the "registerCommand" function to register a new command in the global CmdManager created in the "index.js"
-3. Check if the command get registered by starting the bot and check the "Loaded commands:" logs.
+# New cmd
+1. Create a file in the `./src/cmds` folder.
+   The file extension should be `<name>.cmd.ts`.
+2. Use the `registerCommand(<builder>, <handler>)` function to register a new command in the global CmdManager created in the `index.js`
+3. Check if the command get registered by starting the bot and check the `# Loaded commands:` logs.
 
 # new porject
 Init a new discord bot project from scratch with the following commands:
