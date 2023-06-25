@@ -14,11 +14,11 @@
 - [discord bot boilerplate](#discord-bot-boilerplate)
 - [Table of Contents](#table-of-contents)
 - [About](#about)
-- [env](#env)
-- [starting](#starting)
-- [development](#development)
-- [New cmd](#new-cmd)
-- [new porject](#new-porject)
+  - [Environment setup](#environment-setup)
+  - [Getting Started](#getting-started)
+  - [Development](#development)
+- [Custom cmd](#custom-cmd)
+- [New project](#new-project)
 - [copy tsconfig.json](#copy-tsconfigjson)
 
 # About
@@ -32,8 +32,9 @@ It provides a:
 The Discord Bot Boilerplate is a perfect starting point for `TypeScript` developers who want to `quickly kickstart` their bot projects.
 It provides a `100% type-safe` boilerplate, ensuring a robust foundation for building Discord bots.
 
-# env
-Before running the bot, you need to set up your environment variables like the following:
+## Environment setup
+
+Before running the bot, make sure to set up your environment variables as follows:
 ```bash
 export DISCORD_BOT_TOKEN=CHANGE_ME
 export DISCORD_GUILD_ID=CHANGE_ME
@@ -43,27 +44,39 @@ export DISCORD_VERIFY_CATEGORY_ID=CHANGE_ME
 export DISCORD_APP_ID=CHANGE_ME
 ```
 
-# starting
-Use the following command to compile and then start the bot:
-```bash
-npm run tsc
-npm run start
-```
 
-# development
-Use the following command to run the bot with `ts-node` and automatically start when files in the source folder change:
+## Getting Started
+
+Follow the instructions below to get started with the Discord bot:
+
+1. Clone this repository to your local machine.
+   ```bash
+   git clone git@github.com:NobleMajo/discord-bot-typescript-boilerplate.git
+   ```
+3. Set up the required [environment variables](#environment-setup).
+4. Compile the bot using the provided build command.
+   ```bash
+   npm run tsc
+   ```
+5. Start the bot and enjoy exploring the included commands.
+   ```bash
+   npm run start
+   ```
+
+## Development
+For development purposes, you can use the following command to run the bot using `ts-node`, which automatically restarts when files in the source folder change:
 ```
 npm run dev
 ```
 
-# New cmd
+# Custom cmd
 1. Create a file in the `./src/cmds` folder.
    The file extension should be `<name>.cmd.ts`.
 2. Use the `registerCommand(<builder>, <handler>)` function to register a new command in the global CmdManager created in the `index.js`
 3. Check if the command get registered by starting the bot and check the `# Loaded commands:` logs.
 
-# new porject
-Init a new discord bot project from scratch with the following commands:
+# New project
+Initialize a new Discord bot project from scratch using the following commands:
 ````bash
 npm init
 npm i -D typescript @types/node nodemon ts-node
