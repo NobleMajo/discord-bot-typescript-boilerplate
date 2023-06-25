@@ -6,9 +6,6 @@ Before running the bot, you need to set up your environment variables like the f
 ```bash
 export DISCORD_BOT_TOKEN=CHANGE_ME
 export DISCORD_GUILD_ID=CHANGE_ME
-export DISCORD_MEMBER_ROLE_ID=CHANGE_ME
-export DISCORD_VERIFY_CHANNEL_ID=CHANGE_ME
-export DISCORD_VERIFY_CATEGORY_ID=CHANGE_ME
 export DISCORD_APP_ID=CHANGE_ME
 ```
 
